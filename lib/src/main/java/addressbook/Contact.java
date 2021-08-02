@@ -1,6 +1,7 @@
 package addressbook;
 
-public class Contact {
+public class Contact 
+{
 	
 	private String firstname;
 	private String lastname;
@@ -11,7 +12,8 @@ public class Contact {
 	private String emailid;
 	private long zipcode;
 	
-	public void Contact(String firstname,String lastname, String address, String city, String state, String phonenumber, String emailid, long zipcode) {
+	public void Contact(String firstname,String lastname, String address, String city, String state, String phonenumber, String emailid, long zipcode) 
+	{
 		
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -73,7 +75,8 @@ public class Contact {
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Contact[ FirstName=" + firstname + ",LastName=" + lastname + ",Address=" + address + ",City=" + city + ",State=" + state +
 								",PhoneNumber=" + phonenumber + ",Emailid=" + emailid + ",Zipcode=" + zipcode + "]";
 	}

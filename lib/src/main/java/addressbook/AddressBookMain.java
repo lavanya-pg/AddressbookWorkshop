@@ -23,7 +23,7 @@ public class AddressBookMain
                     service.editContact();
                     break;
                 case 3:
-                    System.out.println("Enter the name of the person do you wants to delete:");
+                    System.out.println("Enter the Name of the Person do you Wants to Delete:");
                     String personName = scanner.next();
                     service.deleteContact(personName);
                 
