@@ -16,7 +16,7 @@ public class AddressBook
         contact.setFirstname(scanner.next());
 
         System.out.println("Enter Last Name:");
-        contact.setFirstname(scanner.next());
+        contact.setLastname(scanner.next());
 
         System.out.println("Enter Address:");
         contact.setAddress(scanner.next());
@@ -91,6 +91,19 @@ public class AddressBook
             }
         }
         System.out.println("Contact Edited Successfully");
+    }
+    
+    public void deleteContact(String name)
+    {
+        for (int i = 0; i < contactlist.size(); i++) 
+        {
+            if (contactlist.get(i).getFirstname().equals(name)) 
+            {
+                Contact contact = contactlist.get(i);
+                contactlist.remove(contact);
+            }
+        }
+        System.out.println("Contact Deleted Successfully");
     }
     public void displayList() 
     {
