@@ -58,7 +58,7 @@ public class AddressBook
                         break;
                     case 2:
                         System.out.println("Enter new last name");
-                        contactlist.get(i).setFirstname(scanner.next());
+                        contactlist.get(i).setLastname(scanner.next());
                         break;
                     case 3:
                         System.out.println("Enter new Address");
