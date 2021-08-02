@@ -4,35 +4,33 @@ import java.util.Scanner;
 
 public class AddressBookMain 
 {
-	Contact user;
-	private void addContact() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the FirstName: ");
-		String firstname = scanner.nextLine();
-		System.out.println("Enter the LastName: ");
-		String lastname = scanner.nextLine();
-		System.out.println("Enter the Address: ");
-		String address = scanner.nextLine();
-		System.out.println("Enter the City: ");
-		String city = scanner.nextLine();
-		System.out.println("Enter the State: ");
-		String state = scanner.nextLine();
-		System.out.println("Enter the PhoneNumber: ");
-		String phonenumber = scanner.nextLine();
-		System.out.println("Enter the EmailId: ");
-		String emailid = scanner.nextLine();
-		System.out.println("Enter the ZipCode: ");
-		long zipcode = scanner.nextLong();
-		user = new Contact();
-		System.out.println("Contact Added Successfully.");
-		
-	}
-	public static void main(String[] args)
-	{
-	   System.out.println("welcome to AddressBook Program!");
-	   Contact user = new Contact();
-	   AddressBookMain addressBook = new AddressBookMain();
-       addressBook.addContact();
-       System.out.println(user);
-	}
+	static AddressBook service = new AddressBook();
+
+    public static void main(String[] args)
+    {
+        boolean isExit = false;
+        while (!isExit)
+        {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter options \n 1.Add Contact.\n 2.Edit Contact.\n 3.Display Contact.\n 4.Exit.");
+            int userInput = scanner.nextInt();
+            switch (userInput)
+            {
+                case 1:
+                	service.addNewContact();
+                    break;
+                case 2:
+                    service.editContact();
+                    break;
+                case 3:
+                    service.displayList();
+                    break;
+                case 4:
+                    isExit = true;
+                    break;
+                default:
+                    System.out.println("Please enter valid input");
+            }
+        }
+    }
 }
