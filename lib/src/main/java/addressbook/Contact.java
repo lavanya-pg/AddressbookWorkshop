@@ -3,6 +3,7 @@ package addressbook;
 public class Contact 
 {
 	
+	private static final long long zipcode = 0;
 	private String firstname;
 	private String lastname;
 	private String address;
@@ -80,4 +81,56 @@ public class Contact
 		return "Contact[ FirstName=" + firstname + ",LastName=" + lastname + ",Address=" + address + ",City=" + city + ",State=" + state +
 								",PhoneNumber=" + phonenumber + ",Emailid=" + emailid + ",Zipcode=" + zipcode + "]";
 	}
+	
+	 @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        Contact other = (Contact) obj;
+	        if (address == null) {
+	            if (other.address != null)
+	                return false;
+	        } else if (!address.equals(other.address))
+	            return false;
+	        if (city == null) {
+	            if (other.city != null)
+	                return false;
+	        } else if (!city.equals(other.city))
+	            return false;
+	        if (emailid == null) {
+	            if (other.email != null)
+	                return false;
+	        } else if (!emailid.equals(other.email))
+	            return false;
+	        if (firstname == null) {
+	            if (other.firstname != null)
+	                return false;
+	        } else if (!firstname.equals(other.firstname))
+	            return false;
+	        if (lastname == null) {
+	            if (other.lastname != null)
+	                return false;
+	        } else if (!lastname.equals(other.getLastname()))
+	            return false;
+	        if (phonenumber == null) {
+	            if (other.phonenumber != null)
+	                return false;
+	        } else if (!phonenumber.equals(other.phonenumber))
+	            return false;
+	        if (state == null) {
+	            if (other.state != null)
+	                return false;
+	        } else if (!state.equals(other.state))
+	            return false;
+	        if (zipcode == null) {
+	            if (other.zipcode != null)
+	                return false;
+	        } else if (!zipcode.equals(other.zipcode))
+	            return false;
+	        return true;
+	    }
 }
