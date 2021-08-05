@@ -17,4 +17,10 @@ public class AddressBookServiceTest {
         boolean result = addressBookJDBC.checkUpdatedRecordSyncWithDatabase("Lalath");
         Assert.assertTrue(result);
     }
+    @Test
+    public void givenAddressBook_WhenRetrieved_ShouldMatchCountInGivenRange() throws AddressBookException {
+        AddressBookJDBC addressBookJDBC = new AddressBookJDBC();
+        List<Contact> addressBookData = addressBookJDBC.readAddressBookData(AddressBookJDBC.IOService.DB_IO, "2018-02-14", "2020-06-02");
+        Assert.assertEquals(3, addressBookData.size());
+    }
 }
