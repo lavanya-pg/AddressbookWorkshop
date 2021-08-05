@@ -12,6 +12,8 @@ public class Contact
 	private String phonenumber;
 	private String emailid;
 	private long zipcode;
+	private String AddressBookType;
+	private String Date;
 	
 	public void Contact(String firstname,String lastname, String address, String city, String state, String phonenumber, String emailid, long zipcode) 
 	{
@@ -25,6 +27,19 @@ public class Contact
 		this.emailid = emailid;
 		this.zipcode = zipcode;
 	}
+	
+	 public Contact(String firstName, String lastName, String address, String city, String state, String zip, String phoneNo, String email,String AddressBookType,String Date) {
+	        this.firstname=firstName;
+	        this.lastname = lastName;
+	        this.address = address;
+	        this.city = city;
+	        this.state = state;
+	        this.zipcode = zipcode;
+	        this.phonenumber = phoneNo;
+	        this.emailid = email;
+	        this.AddressBookType =AddressBookType;
+	        this.Date = Date;
+	    }
 	
 	public String getFirstname() {
 		return firstname;
@@ -102,9 +117,9 @@ public class Contact
 	        } else if (!city.equals(other.city))
 	            return false;
 	        if (emailid == null) {
-	            if (other.email != null)
+	            if (other.emailid != null)
 	                return false;
-	        } else if (!emailid.equals(other.email))
+	        } else if (!emailid.equals(other.emailid))
 	            return false;
 	        if (firstname == null) {
 	            if (other.firstname != null)
