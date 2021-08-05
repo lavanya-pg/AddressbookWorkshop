@@ -454,6 +454,11 @@ public class AddressBook
         System.out.println(addressBookFile);
         return addressBookFile;
     }
+    
+    private Contact getAddressBookData(String firstname) {
+        return this.addressBookFile.stream().filter(addressBookItem -> addressBookItem.getFirstName().equals(firstname))
+                .findFirst().orElse(null);
+    }
     public List<Contact> readData(LocalDate start, LocalDate end) throws AddressBookException {
         String query = null;
         if (start != null)
